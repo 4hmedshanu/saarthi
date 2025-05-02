@@ -1,0 +1,13 @@
+package saarthi;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+public class maincontroller {
+	
+	@RequestMapping("/")
+	public String gethome() {
+		return "index";
+	}
+}
