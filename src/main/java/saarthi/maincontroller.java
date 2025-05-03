@@ -20,4 +20,14 @@ public class maincontroller {
 	public String getsign_up() {
 		return "singup";
 	}
+	
+	@RequestMapping("/Utc")
+	public String getUtcbus() {
+		return "utcbus";
+	}
+	
+	@RequestMapping("home")
+	public String sethome() {
+		return "redirect:/";
+	}
 }

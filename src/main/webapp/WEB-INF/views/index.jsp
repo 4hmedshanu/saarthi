@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
     
     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-    <link rel="stylesheet" type="text/css" href="<c:url value='/css/style.css'/>">
+   
 
     
 <!DOCTYPE html>
@@ -28,6 +28,7 @@
                         <button class="nav-item"><a href="electric" >Electric Bus</a></button>
                         <button class="nav-item"><a href="my">My Tickets</a></button>
                     </div>
+                    
                     <div class="location-btn">
                         <svg class="location-pin" width="16" height="16" viewBox="0 0 24 24" fill="none">
                             <path d="M12 2C8.13 2 5 5.13 5 9C5 14.25 12 22 12 22C12 22 19 14.25 19 9C19 5.13 15.87 2 12 2ZM12 11.5C10.62 11.5 9.5 10.38 9.5 9C9.5 7.62 10.62 6.5 12 6.5C13.38 6.5 14.5 7.62 14.5 9C14.5 10.38 13.38 11.5 12 11.5Z" fill="#777777"/>
@@ -85,7 +86,8 @@
                     </div>
                     </a>
                 </div>
-                <a href="utc_bus" target="_black">
+                <a href="Utc" target="_black">
+                
                 <div class="bus-card utc-bus">
                     <div class="bus-card-title">UTC Bus</div>
                     <div class="bus-card-info">Lifeline of Uttarakhand</div>

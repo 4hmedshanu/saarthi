@@ -1,0 +1,903 @@
+@charset "UTF-8";
+
+/* Base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+
+
+body {
+    background-color: #fff5e6;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 1400px;
+}
+
+.app-container {
+    background-color: #fff5e6;
+    min-height: 100vh;
+    position: relative;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Header styles */
+.header {
+    padding: 16px;
+    background-color: #fff5e6;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo styling */
+.logo {
+    font-weight: 700;
+    font-size: 20px;
+    color: #000;
+    text-transform: uppercase;
+}
+
+/* Navigation container */
+.nav-container {
+    display: flex;
+    align-items: center;
+}
+
+.nav-item {
+    margin-left: 25px;
+    color: #333;
+    font-weight: 500;
+    font-size: 16px;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.nav-item:hover {
+    color: #F57C00;
+}
+
+/* Highlight UTC Bus in orange */
+.nav-item.highlight {
+    color: #F57C00;
+}
+
+/* Location dropdown styling */
+.location-dropdown {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 30px;
+    padding: 8px 15px;
+    margin-left: 25px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.location-icon {
+    margin-right: 8px;
+    color: #777;
+}
+
+.location-name {
+    font-weight: 500;
+    font-size: 16px;
+    color: #333;
+}
+
+.arrow-icon {
+    margin-left: 8px;
+    color: #777;
+}
+
+/* Search styling - UPDATED to match Image 2 */
+.search-container {
+    margin: 20px;
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* Search bar - UPDATED */
+input[type="text"] {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    font-size: 16px;
+    color: #666;
+}
+
+/* Recent routes */
+.recent-routes {
+    padding: 10px 16px;
+    overflow-x: auto;
+    white-space: nowrap;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+    font-size: 13px;
+    color: #666;
+    background-color: #fff5e6;
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.recent-routes::-webkit-scrollbar {
+    display: none;
+}
+
+.route-item {
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 10px;
+    margin-right: 10px;
+    width: 200px;
+    height: 75px;
+    white-space: normal;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
+.route-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+}
+
+.route-dots {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 12px;
+}
+
+.dot-from {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #cccccc; /* Changed from #F57C00 to light gray */
+}
+
+.connection-line {
+    width: 2px;
+    height: 20px;
+    background-color: #cccccc; /* Changed from #F57C00 to light gray */
+}
+
+.dot-to {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #333333; /* Changed from #F57C00 to dark gray/black */
+}
+
+.route-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 4px 0; 
+}
+
+.from-location, .to-location {
+    font-size: 14px;
+    color: #555555;
+}
+
+/* Quick payments divider */
+.quick-payments, .buses-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 16px;
+    position: relative;
+    margin-bottom: 10px;
+    background-color: #fff5e6;
+}
+
+.start-dot, .end-dot {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background-color: #999;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+.start-dot {
+    left: 4%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.end-dot {
+    right: 4%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.quick-payments-text, .buses-divider-text {
+    font-size: 12px;
+    font-weight: 500;
+    color: #777;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 0 10px;
+    background-color: #fff5e6;
+    z-index: 1;
+}
+
+.quick-payments:before, .buses-divider:before {
+    content: "";
+    position: absolute;
+    width: 90%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #bbb 20%, #bbb 80%, transparent);
+    z-index: 0;
+}
+
+/* Buy ticket styles */
+.buy-ticket {
+    margin: 5px 16px 15px;
+    padding: 15px;
+    background-color: #fff;
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    border-left: 4px solid #F57C00;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.buy-ticket:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.ticket-icon {
+    background-color: #F57C00;
+    padding: 10px;
+    border-radius: 50%;
+    margin-right: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ticket-info {
+    flex: 1;
+}
+
+.ticket-title {
+    font-weight: 600;
+    font-size: 15px;
+    margin-bottom: 3px;
+    color: #333;
+}
+
+.ticket-subtitle {
+    font-size: 12px;
+    color: #777;
+}
+
+/* Nearest stop section */
+.nearest-stop {
+    margin: 20px;
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.section-title {
+    font-weight: 600;
+    font-size: 18px;
+    color: #333;
+}
+
+.see-all {
+    color: #F57C00;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.dot {
+    font-weight: bold;
+    color: #F57C00;
+}
+
+.stop-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.stop-icon {
+    display: flex;
+    align-items: center;
+}
+
+.location-pin {
+    margin-right: 10px;
+}
+
+.stop-name {
+    font-weight: 500;
+    font-size: 16px;
+    color: #333;
+}
+
+.walk-info {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 12px;
+    color: #777777;
+}
+
+.walk-icon {
+    margin-right: 5px;
+}
+
+.bus-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* UPDATED: Changed bus-item background to white with border */
+.bus-item {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    padding: 12px;
+    border-radius: 10px;
+    color: #333;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* UPDATED: Changed bus-icon background to light blue */
+.bus-icon {
+    background-color: #4299E1;
+    padding: 8px;
+    border-radius: 50%;
+    margin-right: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.bus-info {
+    flex-grow: 1;
+}
+
+/* Bus number container for AC label */
+.bus-number-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 2px;
+}
+
+/* UPDATED: Changed bus number color to match Image 2 */
+.bus-number {
+    font-weight: 700;
+    font-size: 16px;
+    color: #333;
+}
+
+.ac-label {
+    background-color: #d5f5e3;
+    color: #1E293B;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 2px 6px;
+    border-radius: 4px;
+}
+
+/* UPDATED: Changed bus destination color */
+.bus-destination {
+    font-size: 14px;
+    color: #555;
+    font-weight: 500;
+}
+
+.bus-time {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.wifi-signal {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.wifi-icon {
+    color: #4299E1;
+}
+
+.in-min {
+    font-weight: 600;
+    font-size: 14px;
+    color: #4299E1;
+    margin-bottom: 5px;
+}
+
+.every-min {
+    font-weight: 600;
+    font-size: 14px;
+    color: #777;
+    margin-bottom: 5px;
+}
+
+.people-icons {
+    display: flex;
+    gap: 2px;
+}
+
+/* UPDATED: Changed person icons colors */
+.person-icon {
+    width: 16px;
+    height: 16px;
+}
+
+/* For A-507 bus - all three should be green */
+.bus-item:first-child .person-icon {
+    fill: #2ecc71;
+}
+
+/* For 313 bus - all three should be the same color */
+.bus-item:nth-child(2) .person-icon {
+    fill: #777777;
+}
+
+/* Remove opacity from the unavailable person icon */
+.person-unavailable {
+    fill: #777777;
+    opacity: 1;
+}
+
+.see-all-buses {
+    text-align: right;
+    margin-top: 15px;
+}
+
+/* Map section */
+.map-container {
+    padding: 0 20px;
+    margin-bottom: 20px;
+}
+
+.map-section {
+    background-color: #fff;
+    border-radius: 15px;
+    padding: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.map-frame {
+    width: 100%;
+    height: 200px;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.map-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Tickets section */
+.tickets-section {
+    padding: 0 20px 20px;
+}
+
+.tickets-button {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tickets-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.tickets-icon {
+    margin-right: 15px;
+}
+
+.tickets-text {
+    font-weight: 600;
+    font-size: 16px;
+    color: #333;
+}
+
+/* New styles for the updated design in the image */
+
+/* Search box with route points - UPDATED to match Image 2 */
+.search-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.route-selection {
+    display: flex;
+    position: relative;
+    align-items: center;
+}
+
+/* UPDATED: Route marker styling to match Image 2 exactly */
+.route-marker {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    margin-right: 15px;
+    margin-left: 8px;
+}
+
+/* UPDATED: Route line styling to match Image 2 exactly */
+.route-line {
+    position: absolute;
+    width: 2px;
+    background-color: #000;
+    height: 40px;
+    top: 20px;
+    left: 5px;
+    z-index: 0;
+}
+.route-point {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    position: relative;
+    z-index: 2;
+}
+
+/* Hollow dot for "from" location */
+.route-point.hollow {
+    background-color: #fff;
+    border: 2px solid #000;
+    margin-top: 12px;
+}
+
+/* Solid dot for "to" location */
+.route-point.solid {
+    background-color: #000;
+    border: none;
+    margin-top: 45px; /* Space between dots */
+}
+
+/* UPDATED: Top route point to match Image 2 exactly */
+.route-point:first-child {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: 1px solid #000;
+    background-color: #fff;
+    margin: 15px 0;
+    position: relative;
+    z-index: 2;
+}
+
+/* UPDATED: Bottom route point to match Image 2 exactly */
+.route-point:last-child {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #000;
+    margin: 15px 0;
+    position: relative;
+    z-index: 2;
+    border: none;
+}
+
+.input-fields {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    width: calc(100% - 50px); /* Account for route marker and swap button */
+}
+
+/* UPDATED: Input group to match Image 2 */
+.input-group {
+    position: relative;
+    
+}
+.input-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border: none;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    font-size: 16px;
+    color: #666;
+}
+
+/* UPDATED: Swap button to match Image 2 exactly */
+.swap-button {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #fff;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 10;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.swap-icon {
+    font-size: 18px;
+    /* Use up/down arrows ↑↓ to match Image 2 */
+    content: "↑↓";
+}
+
+/* UPDATED: Search button to match Image 2 exactly */
+.search-button {
+    width: 100%;
+    padding: 15px;
+    background-color: #FFCC80;
+    color: #333;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    text-align: center;
+    transition: background-color 0.3s ease;
+    margin-top: 5px;
+
+}
+
+.search-button:hover {
+    background-color: #FFA726;
+}
+
+/* UPDATED: Input fields to match Image 2 exactly */
+input[type="text"].search-input {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    font-size: 16px;
+    color: #666;
+    height: 48px;
+}
+
+/* Where from? and Where to? placeholder styling */
+input[type="text"].search-input::placeholder {
+    color: #999;
+    font-size: 14px;
+}
+
+/* New styles for simplified header as shown in the image */
+input[type="text"].search-bar {
+    width: 100%;
+    padding: 12px 20px;
+    border: none;
+    background-color: #fff;
+    border-radius: 30px;
+    font-size: 16px;
+    color: #666;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* For the clean design of search box in image */
+.search-box-container {
+    padding: 15px;
+    position: relative;
+}
+
+.search-icon {
+    position: absolute;
+    left: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #777;
+}
+
+/* Additional styles for the simplified view in the image */
+.bus-stop-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 12px 15px;
+    margin-bottom: 10px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.stop-location {
+    display: flex;
+    align-items: center;
+}
+
+.stop-location-icon {
+    margin-right: 10px;
+    color: #777;
+}
+
+.stop-location-text {
+    font-weight: 500;
+    font-size: 16px;
+    color: #333;
+}
+
+.bus-info-compact {
+    display: flex;
+    align-items: center;
+    background-color: #1E293B;
+    padding: 8px 12px;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+.bus-number-compact {
+    font-weight: 700;
+    font-size: 16px;
+    color: #fff;
+    margin-right: 10px;
+}
+
+.bus-time-compact {
+    font-size: 14px;
+    color: #4299E1;
+    font-weight: 600;
+}
+
+/* Additional styles for the bus details as shown in image */
+.bus-occupancy {
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+}
+
+.occupancy-text {
+    font-size: 12px;
+    color: #777;
+    margin-right: 5px;
+}
+
+.occupancy-indicator {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+
+.occupancy-high {
+    background-color: #e74c3c;
+}
+
+.occupancy-medium {
+    background-color: #f39c12;
+}
+
+.occupancy-low {
+    background-color: #2ecc71;
+}
+
+/* Bus details for the simplified view */
+.bus-details-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.bus-details-number {
+    font-weight: 600;
+    color: #333;
+}
+
+.bus-details-time {
+    color: #4299E1;
+    font-weight: 500;
+}
+
+.bus-details-location {
+    font-size: 14px;
+    color: #777;
+}
+
+/* Additional styling for consistency with Image 2 */
+.from-location {
+    color: #999;
+    font-weight: normal;
+    font-size: 13px;
+    margin-bottom: 12px;
+}
+
+.to-location {
+    color: #333;
+    font-weight: 500;
+    font-size: 13px;
+}
+
+/* Ensure consistent spacing in the "See all buses" section */
+.see-all-buses {
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+/* UPDATED: Walk info styling to match Image 3 exactly */
+.walk-info {
+    display: flex;
+    align-items: center;
+    background-color: #f0f0f0;
+    border-radius: 20px;
+    padding: 4px 12px;
+    font-size: 12px;
+    color: #777;
+}
+
+/* UPDATED: To match Image 3 exactly */
+.walk-icon {
+    margin-right: 4px;
+    fill: #777;
+    width: 12px;
+    height: 12px;
+}
+
+/* UPDATED: Min away styling to match Image 3 exactly */
+.min-away {
+    display: flex;
+    align-items: center;
+    color: #FF0000;
+    font-weight: 500;
+    margin-left: 3px;
+}
+
+/* UPDATED: Number styling for min away to match Image 3 exactly */
+.min-number {
+    font-weight: 700;
+    color: #FF0000;
+    font-size: 15px;
+    margin-right: 3px;
+}
+
+a{
+	
+	text-decoration:none;
+}
