@@ -81,8 +81,8 @@
     <div class="login-box">
       <h2>Login</h2>
       <form action="login_submit" method="get">
-        <input type="text" placeholder="Username" name="User_name" required />
-        <input type="password" placeholder="Password" name="user_password" required />
+        <input type="text" placeholder="Username" name="Username" required />
+        <input type="password" placeholder="Password" name="passwored" required />
         <button type="submit">Login</button>
       </form>
       <div class="link">

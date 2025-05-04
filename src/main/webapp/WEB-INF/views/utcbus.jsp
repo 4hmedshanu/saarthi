@@ -13,6 +13,50 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="<c:url value='/css/utcbus.css'/>">
     
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+ <script type="text/javascript">
+  google.charts.load('current', {
+    'packages': ['map'],
+    'mapsApiKey': 'AIzaSyBopy2_ule3HjT4jvAarZjbfMA0tVS1O-c' // Replace with your actual API key
+  });
+
+  google.charts.setOnLoadCallback(drawMap);
+
+  function drawMap () {
+    var data = new google.visualization.DataTable();
+    data.addColumn('string', 'Address');
+    data.addColumn('string', 'Location');
+
+    data.addRows([
+    	  ['Almora, Uttarakhand, India', 'Almora'],
+    	  ['Bageshwar, Uttarakhand, India', 'Bageshwar'],
+    	  
+    	]);
+
+    var options = {
+      mapType: 'styledMap',
+      zoomLevel: 7,
+      showTooltip: true,
+      showInfoWindow: true,
+      useMapTypeControl: true,
+      maps: {
+        styledMap: {
+          name: 'Styled Map',
+          styles: [
+            {featureType: 'poi.attraction', stylers: [{color: '#fce8b2'}]},
+            {featureType: 'road.highway', stylers: [{hue: '#0277bd'}, {saturation: -50}]},
+            {featureType: 'road.highway', elementType: 'labels.icon', stylers: [{hue: '#000'}, {saturation: 100}, {lightness: 50}]},
+            {featureType: 'landscape', stylers: [{hue: '#259b24'}, {saturation: 10}, {lightness: -22}]}
+          ]
+        }
+      }
+    };
+
+    var map = new google.visualization.Map(document.getElementById('map_div'));
+    map.draw(data, options);
+  }
+</script>
+    
 </head>
 <body>
     <div class="app-container">
@@ -21,9 +65,10 @@
             <div class="logo">Saarthi</div>
             <div class="nav-container">
                 <div class="nav-item"><a href="home">Home</a></div>
-                <div class="nav-item highlight"><a href="">UTC Bus</a></div>
-                <div class="nav-item"><a href="">Electric Bus</a></div>
-                <div class="nav-item"><a href="">My Tickets</a></div>
+                <div class="nav-item highlight"><a href="Utc">UTC Bus</a></div>
+                <div class="nav-item"><a href="electric">Electric Bus</a></div>
+                <div class="nav-item"><a href="mytrickets">My Tickets</a></div>
+                <div class="nav-item"><a href="#">findRoute</a></div>
                 
                 <div class="location-dropdown">
                     <svg class="location-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -264,11 +309,13 @@
         </div>
         
         <div class="map-container">
-            <div class="map-section">
-                <div class="map-frame">
-                    <img class="map-image" src="https://via.placeholder.com/800x400?text=Map" alt="Bus map">
+            <div class="map-section" style="height: 500px;">
+                <div class="map-frame" style="height: 500px;" id="map_div"> 
+                    <!-- Map -->
                 </div>
             </div>
+            
+           
         </div>
         
         <div class="tickets-section">
@@ -280,5 +327,6 @@
             </div>
         </div>
     </div>
+ 
 </body>
 </html>

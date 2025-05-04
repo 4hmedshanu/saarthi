@@ -80,15 +80,15 @@
   <div class="signup-wrapper">
     <div class="signup-box">
       <h2>Create Account</h2>
-      <form>
-        <input type="text" placeholder="Full Name" required />
-        <input type="email" placeholder="Email Address" required />
-        <input type="text" placeholder="Username" required />
-        <input type="password" placeholder="Password" required />
+      <form action="sign" method="get">
+        <input type="text" placeholder="Full Name" name="full_name" required />
+        <input type="email" placeholder="Email Address" name="email_id" required />
+        <input type="text" placeholder="Username" name="Username" required />
+        <input type="password" placeholder="Password" name="passwored" required />
         <input type="password" placeholder="Confirm Password" required />
         <button type="submit">Sign Up</button>
         <div class="link">
-          Already have an account? <a href="login.html">Login</a>
+          Already have an account? <a href="login">Login</a>
         </div>
       </form>
     </div>

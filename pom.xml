@@ -94,8 +94,18 @@
 			    <groupId>org.springframework</groupId>
 			    <artifactId>spring-webmvc</artifactId>
 			    <version>6.2.5</version>
-			</dependency>    
-    
+			</dependency>   
+			
+						 <!-- https://mvnrepository.com/artifact/org.springframework/spring-jdbc -->
+			<dependency>
+			    <groupId>org.springframework</groupId>
+			    <artifactId>spring-jdbc</artifactId>
+			    <version>6.2.5</version>
+			</dependency>
+			
+			
+			
+			
   </dependencies>
   <build>
     <finalName>saarthi</finalName>

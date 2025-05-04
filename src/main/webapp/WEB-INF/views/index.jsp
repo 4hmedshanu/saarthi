@@ -26,7 +26,8 @@
                         <button class="login-btn"><a href="login" targe="_black">Login</a></button>
                         <button class="nav-item"><a href="Utc" >UTC Bus</a></button>
                         <button class="nav-item"><a href="electric" >Electric Bus</a></button>
-                        <button class="nav-item"><a href="my">My Tickets</a></button>
+                        <button class="nav-item"><a href="mytrickets">My Tickets</a></button>
+                        <button class="nav-item"><a href="#">findRoute</a></button>
                     </div>
                     
                     <div class="location-btn">
