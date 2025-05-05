@@ -83,6 +83,7 @@
         </div>
         
         <!-- REPLACED: Search box with the new format -->
+        
         <form action="search" method="get">
         <div class="search-container">
             <div class="search-form">
@@ -107,8 +108,8 @@
                 <button class="search-button" type="submit">Search for bus</button>
             </div>
         </div>
-        
          </form>
+         
         <div class="recent-routes">
             <div class="route-item">
                 <div class="route-dots">
@@ -154,6 +155,7 @@
                     <div class="to-location">Nainital Zoo</div>
                 </div>
             </div>
+            
             <div class="route-item">
                 <div class="route-dots">
                     <div class="dot-from"></div>
@@ -188,6 +190,18 @@
                 </div>
             </div>
         </div>
+        
+        <div class="map-container">
+            <div class="map-section" style="height: 500px;">
+                <div class="map-frame" style="height: 500px;" id="map_div"> 
+                    <!-- Map -->
+                </div>
+            </div>
+           
+        </div>
+        
+        
+        
         
         <div class="quick-payments">
             <div class="start-dot"></div>
@@ -308,16 +322,7 @@
             <div class="end-dot"></div>
         </div>
         
-        <div class="map-container">
-            <div class="map-section" style="height: 500px;">
-                <div class="map-frame" style="height: 500px;" id="map_div"> 
-                    <!-- Map -->
-                </div>
-            </div>
             
-           
-        </div>
-        
         <div class="tickets-section">
             <div class="tickets-button">
                 <svg class="tickets-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

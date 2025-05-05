@@ -15,6 +15,101 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="<c:url value='/css/style.css'/>">
+    
+    <style type="text/css">
+    			.chatbot-icon {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #0d6efd;
+      color: white;
+      font-size: 24px;
+      padding: 15px;
+      border-radius: 50%;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      z-index: 1000;
+  }
+
+  .chatbot-modal {
+      display: none;
+      position: fixed;
+      bottom: 80px;
+      right: 20px;
+      width: 320px;
+      height: 420px;
+      background-color: white;
+      border-radius: 15px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+      z-index: 1001;
+      flex-direction: column;
+      overflow: hidden;
+  }
+
+  .chatbot-header {
+      background-color: #0d6efd;
+      color: white;
+      padding: 10px;
+      font-weight: bold;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+  }
+
+  .chatbot-body {
+      flex: 1;
+      padding: 10px;
+      height: 300px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+  }
+
+  .chatbot-input {
+      display: flex;
+      padding: 10px;
+      border-top: 1px solid #ccc;
+  }
+
+  .chatbot-input input {
+      flex: 1;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+  }
+
+  .chatbot-input button {
+      margin-left: 8px;
+      padding: 8px 12px;
+      background-color: #0d6efd;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+  }
+
+  .bot-message, .user-message {
+      margin: 5px 0;
+      padding: 8px;
+      border-radius: 10px;
+      max-width: 80%;
+  }
+
+  .bot-message {
+      background-color: #f1f0f0;
+      align-self: flex-start;
+  }
+
+  .user-message {
+      background-color: #dcf8c6;
+      align-self: flex-end;
+  }
+
+  .close-chat {
+      cursor: pointer;
+      font-size: 20px;
+  }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -27,7 +122,7 @@
                         <button class="nav-item"><a href="Utc" >UTC Bus</a></button>
                         <button class="nav-item"><a href="electric" >Electric Bus</a></button>
                         <button class="nav-item"><a href="mytrickets">My Tickets</a></button>
-                        <button class="nav-item"><a href="#">findRoute</a></button>
+                        <button class="nav-item"><a href="find">Find My Bus</a></button>
                     </div>
                     
                     <div class="location-btn">
@@ -127,10 +222,43 @@
         </div>
 
         <footer>
+					        
+					        
+					  
+					
+        
             <div class="footer-content">
                 <p>© 2025 Saarthi - Making travel easier in Uttarakhand</p>
             </div>
         </footer>
     </div>
+    
+    
+    
+    <!-- Chatbot Icon Button -->
+    
+    <!-- Chatbot Icon Button -->
+			<div class="chatbot-icon" onclick="toggleChatbot()">
+			    💬
+			</div>
+			
+			<!-- Chatbot Modal -->
+			<div class="chatbot-modal" id="chatbotModal">
+			    <div class="chatbot-header">
+			        SAARTHI-AI: Smart Bus Tracking Systemh
+			         <span class="close-chat" onclick="toggleChatbot()">×</span>
+			    </div>
+			    <div class="chatbot-body" id="chatBody">
+			        <div class="bot-message">Hello! How can I help you today?</div>
+			    </div>
+			    <div class="chatbot-input">
+			    <form action="/" method="get">
+			        <input type="text" id="userInput" name="message" placeholder="Type your message..." />
+			        <button onclick="sendMessage()" type="submit">Send</button>
+			        </form>
+			    </div>
+			</div>
+			
+			 <script type="text/javascript" src="<c:url value='/js/chatbot.js'/>"></script>
 </body>
 </html>

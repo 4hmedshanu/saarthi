@@ -1,12 +1,16 @@
 package saarthi;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import entity.searchform;
 import entity.userdata;
 
 @Controller
@@ -73,5 +77,33 @@ public class maincontroller {
 	public String getmytrickets() {
 		return "tickets";
 	}
+	
+	@RequestMapping("/find")
+	public String getfindmybuss() {
+		return "Find_My_Bus";
+	}
+	
+	
+	@RequestMapping("/Find")
+	public String find(
+			@ModelAttribute searchform destination,
+			Model mo
+			) {
+		
+		List<searchform> data=datasql.getroute(destination);
+		mo.addAttribute("destination",destination);
+		mo.addAttribute("data",data);
+		System.out.println(data);
+		return "searchresult";
+	}
+	
+	@RequestMapping("/search")
+	
+	public String searchutc() {
+		
+		
+		return "redirect:Utc";
+	}
+	
 	
 }
