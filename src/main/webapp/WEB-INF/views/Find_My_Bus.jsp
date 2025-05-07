@@ -21,9 +21,9 @@
             <div class="logo">SAARTHI</div>
             <div class="nav-menu">
                 <div class="nav-item find-bus active">Find My Bus</div>
-                <div class="nav-item">UTC Bus</div>
-                <div class="nav-item">Electric Bus</div>
-                <div class="nav-item">My Tickets</div>
+                <div class="nav-item"><a href="Utc">UTC Bus</a></div>
+                <div class="nav-item"><a href="electric">Electric Bus</a></div>
+                <div class="nav-item"><a href="mytrickets">My Tickets</a></div>
                 <div class="location">
                     <i class="fas fa-map-marker-alt"></i>
                     <span>Dehradun</span>
@@ -51,12 +51,13 @@
         
         <div class="search-form">
         <form action="Find" method="get">
+        
              <div class="route-selection">
 				      <!-- From Station -->
 				      <div class="station">
 				        <div class="station-dot empty"></div>
 				        <div class="station-code">HW</div>
-				        <div class="station-name"><input type="text" name="from" value="Haridwar"  required></div>
+				        <div class="station-name"><input type="text" name="from" value="Tanakpur"  required></div>
 				        <div class="station-clear"><input type="reset" value="×"></div>
 			  </div>
                 
@@ -76,7 +77,7 @@
 			      <div class="station">
 			        <div class="station-dot filled"></div>
 			        <div class="station-code">TPU</div>
-			        <div class="station-name"><input type="text" name="to" value="Tanakpur" required></div>
+			        <div class="station-name"><input type="text" name="to" value="dharchula" required></div>
 			        <div class="station-clear"><input type="reset" value="×"></div>
 			      </div>
 			    </div>

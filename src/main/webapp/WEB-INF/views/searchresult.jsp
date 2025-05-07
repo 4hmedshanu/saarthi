@@ -150,7 +150,8 @@
     </div>
     
     <% searchform search=(searchform) request.getAttribute("destination");
-        List<searchform> se =(List<searchform>) request.getAttribute("data");        		
+        List<searchform> se =(List<searchform>) request.getAttribute("data");     
+                		
                 		%>
 
     <!-- Route Display -->
@@ -176,7 +177,14 @@
         <!-- Bus Item 1 -->
         <%for (searchform ele: se){
     	   %> 
-    	<a href="route">
+    	   <%String name=ele.getFrom()+ele.getTo();
+    	   	String rout=ele.getRoute();
+    	   	String from=ele.getFrom();
+    	   %>
+    	   
+    	   
+    	<a href="route/<%=name%>/<%=rout%>/<%=from%>">
+    	
         <div class="bus-item late-running">
             <div class="bus-details">
                 <div class="bus-number">UK-05062</div>
@@ -188,7 +196,8 @@
                 <div class="bus-fare">₹55</div>
             </div>
             <div class="bus-info">
-                <div class="bus-name"><%=ele.getRoute() %></div>
+                <div class="bus-name"><%=ele.getRoute()%></div>
+                
             </div>
             <div class="status-message">Running late</div>
             
@@ -201,6 +210,6 @@
         <!-- Bus Item 2 -->
        
     
-   
+   <script type="text/javascript" src="<c:url value='/js/result.js'/>"></script>
 </body>
 </html>

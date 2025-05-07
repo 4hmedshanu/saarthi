@@ -129,7 +129,7 @@
                         <svg class="location-pin" width="16" height="16" viewBox="0 0 24 24" fill="none">
                             <path d="M12 2C8.13 2 5 5.13 5 9C5 14.25 12 22 12 22C12 22 19 14.25 19 9C19 5.13 15.87 2 12 2ZM12 11.5C10.62 11.5 9.5 10.38 9.5 9C9.5 7.62 10.62 6.5 12 6.5C13.38 6.5 14.5 7.62 14.5 9C14.5 10.38 13.38 11.5 12 11.5Z" fill="#777777"/>
                         </svg>
-                        <span class="location-text">Dehradun</span>
+                        <span class="location-text">Tanakpur</span>
                         <svg class="location-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none">
                             <path d="M8.59 16.59L13.17 12L8.59 7.41L10 6L16 12L10 18L8.59 16.59Z" fill="#777777"/>
                         </svg>
@@ -170,14 +170,25 @@
                     <div class="bus-card-title">Electric Bus</div>
                     <div class="bus-card-info">Guaranteed seating</div>
                     <div class="bus-card-highlight">Luxury</div>
+                    
                     <div class="bus-image">
                         <div class="bus-categories">
                             <div class="category ac"><a href="ele_Ac" target="_black">AC Bus</a></div>
                             <div class="category non-ac"><a href="ele_non_ac" target="_black">Non-AC Bus</a></div>
                         </div>
                         <div class="bus-photos">
-                            <div class="bus-photo">AC Electric Bus</div>
-                            <div class="bus-photo">Non-AC Electric Bus</div>
+                       
+           
+                            <div style="width: 50%; height: 200px; overflow: hidden; position: relative;">
+							  <img src="<c:url value='/photo/bus_1.jpg'/>" alt="AC Bus"
+							       style="width: 50%; height: 50%; object-fit: fit; display: block; margin: auto">
+							</div>
+							
+                            <div style="width: 50%; height: 200px; overflow: hidden; position: relative;">
+									  <img src="<c:url value='/photo/bus_2.jpg'/>" alt="Non-AC Bus"
+									       style="width: 50%; height: 50%; object-fit: fit; display: block;margin: auto">
+						</div>
+						
                         </div>
                     </div>
                     </a>
@@ -193,9 +204,19 @@
                             <div class="category ac"> <a href="Utc_AC" target="_black">AC Bus</a> </div>
                             <div class="category non-ac"> <a href="Non_ac_utc" target="_black">Non-AC Bus</a> </div>
                         </div>
-                        <div class="bus-photos">
-                            <div class="bus-photo">AC UTC Bus</div>
-                            <div class="bus-photo">Non-AC UTC Bus</div>
+                         <div class="bus-photos">
+                       
+           
+                            <div style="width: 50%; height: 200px; overflow: hidden; position: relative;">
+							  <img src="<c:url value='/photo/bus_1.jpg'/>" alt="AC Bus"
+							       style="width: 50%; height: 50%; object-fit: fit; display: block; margin: auto">
+							</div>
+							
+                            <div style="width: 50%; height: 200px; overflow: hidden; position: relative;">
+									  <img src="<c:url value='/photo/bus_2.jpg'/>" alt="AC Bus"
+									       style="width: 50%; height: 50%; object-fit: fit; display: block;margin: auto">
+						</div>
+						
                         </div>
                     </div>
                   
@@ -220,7 +241,7 @@
                 </div>
             </div>
         </div>
-
+        
         <footer>
 					        
 					        
@@ -245,17 +266,16 @@
 			<!-- Chatbot Modal -->
 			<div class="chatbot-modal" id="chatbotModal">
 			    <div class="chatbot-header">
-			        SAARTHI-AI: Smart Bus Tracking Systemh
+			        SAARTHI-AI: Smart Bus Tracking System
 			         <span class="close-chat" onclick="toggleChatbot()">×</span>
 			    </div>
 			    <div class="chatbot-body" id="chatBody">
 			        <div class="bot-message">Hello! How can I help you today?</div>
 			    </div>
 			    <div class="chatbot-input">
-			    <form action="/" method="get">
+			    
 			        <input type="text" id="userInput" name="message" placeholder="Type your message..." />
-			        <button onclick="sendMessage()" type="submit">Send</button>
-			        </form>
+			        <button onclick="sendMessage()" >Send</button>
 			    </div>
 			</div>
 			

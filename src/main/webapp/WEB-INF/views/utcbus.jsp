@@ -1,3 +1,5 @@
+<%@page import="entity.searchform"%>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
      <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
@@ -26,11 +28,11 @@
     var data = new google.visualization.DataTable();
     data.addColumn('string', 'Address');
     data.addColumn('string', 'Location');
-
+    
     data.addRows([
     	  ['Almora, Uttarakhand, India', 'Almora'],
     	  ['Bageshwar, Uttarakhand, India', 'Bageshwar'],
-    	  
+    	  ['Champawat, Uttarakhand, India', 'Champawat'],
     	]);
 
     var options = {
@@ -68,13 +70,15 @@
                 <div class="nav-item highlight"><a href="Utc">UTC Bus</a></div>
                 <div class="nav-item"><a href="electric">Electric Bus</a></div>
                 <div class="nav-item"><a href="mytrickets">My Tickets</a></div>
-                <div class="nav-item"><a href="#">findRoute</a></div>
+                <div class="nav-item"><a href="find">Find My Bus</a></div>
                 
                 <div class="location-dropdown">
                     <svg class="location-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M12,2C8.13,2,5,5.13,5,9c0,5.25,7,13,7,13s7-7.75,7-13C19,5.13,15.87,2,12,2z M12,11.5c-1.38,0-2.5-1.12-2.5-2.5s1.12-2.5,2.5-2.5s2.5,1.12,2.5,2.5S13.38,11.5,12,11.5z" fill="#777777"/>
                     </svg>
-                    <div class="location-name">Dehradun</div>
+                    <div class="location-name">
+						Tanakpur
+                    </div>
                     <svg class="arrow-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M7.41,8.59L12,13.17l4.59-4.58L18,10l-6,6l-6-6L7.41,8.59z" fill="#777777"/>
                     </svg>
@@ -84,7 +88,8 @@
         
         <!-- REPLACED: Search box with the new format -->
         
-        <form action="search" method="get">
+        <form action="Utc" method="get">
+        
         <div class="search-container">
             <div class="search-form">
                 <div class="route-selection">
@@ -95,10 +100,10 @@
                     </div>
                     <div class="input-fields">
                         <div class="input-group">
-                            <input type="text" placeholder="Where from?">
+                            <input type="text" placeholder="Where from?" name="from">
                         </div>
                         <div class="input-group">
-                            <input type="text" placeholder="Where to?">
+                            <input type="text" placeholder="Where to?" name="to" >
                         </div>
                     </div>
                     <div class="swap-button">
@@ -110,87 +115,29 @@
         </div>
          </form>
          
-        <div class="recent-routes">
-            <div class="route-item">
-                <div class="route-dots">
-                    <div class="dot-from"></div>
-                    <div class="connection-line"></div>
-                    <div class="dot-to"></div>
-                </div>
-                <div class="route-details">
-                    <div class="from-location">Dehradun ISBT</div>
-                    <div class="to-location">Mussoorie Mall Road</div>
-                </div>
-            </div>
-            <div class="route-item">
-                <div class="route-dots">
-                    <div class="dot-from"></div>
-                    <div class="connection-line"></div>
-                    <div class="dot-to"></div>
-                </div>
-                <div class="route-details">
-                    <div class="from-location">Haridwar Railway Station</div>
-                    <div class="to-location">Rishikesh Bus Depot</div>
-                </div>
-            </div>
-            <div class="route-item">
-                <div class="route-dots">
-                    <div class="dot-from"></div>
-                    <div class="connection-line"></div>
-                    <div class="dot-to"></div>
-                </div>
-                <div class="route-details">
-                    <div class="from-location">Nainital Bus Stand</div>
-                    <div class="to-location">Bhimtal Lake</div>
-                </div>
-            </div>
-            <div class="route-item">
-                <div class="route-dots">
-                    <div class="dot-from"></div>
-                    <div class="connection-line"></div>
-                    <div class="dot-to"></div>
-                </div>
-                <div class="route-details">
-                    <div class="from-location">Haldwani Bus Stop</div>
-                    <div class="to-location">Nainital Zoo</div>
-                </div>
-            </div>
-            
-            <div class="route-item">
-                <div class="route-dots">
-                    <div class="dot-from"></div>
-                    <div class="connection-line"></div>
-                    <div class="dot-to"></div>
-                </div>
-                <div class="route-details">
-                    <div class="from-location">Mussoorie Library</div>
-                    <div class="to-location">Kempty Falls</div>
-                </div>
-            </div>
-            <div class="route-item">
-                <div class="route-dots">
-                    <div class="dot-from"></div>
-                    <div class="connection-line"></div>
-                    <div class="dot-to"></div>
-                </div>
-                <div class="route-details">
-                    <div class="from-location">Rishikesh Market</div>
-                    <div class="to-location">Laxman Jhula</div>
-                </div>
-            </div>
-            <div class="route-item">
-                <div class="route-dots">
-                    <div class="dot-from"></div>
-                    <div class="connection-line"></div>
-                    <div class="dot-to"></div>
-                </div>
-                <div class="route-details">
-                    <div class="from-location">Almora Bus</div>
-                    <div class="to-location">Kausani</div>
-                </div>
-            </div>
-        </div>
         
+         
+         <%  List<searchform> se=(List<searchform>) request.getAttribute("data"); %>
+         
+          <div class="recent-routes">
+         <% for(searchform ele:se){
+        	 %>  
+       
+            <div class="route-item">
+                <div class="route-dots">
+                    <div class="dot-from"></div>
+                    <div class="connection-line"></div>
+                    <div class="dot-to"></div>
+                </div>
+                <div class="route-details">
+                    <div class="from-location"><%=ele.getFrom() %></div>
+                    <div class="to-location"><%=ele.getTo() %></div>
+                </div>
+            </div>
+        <%} %>
+
+
+         </div>
         <div class="map-container">
             <div class="map-section" style="height: 500px;">
                 <div class="map-frame" style="height: 500px;" id="map_div"> 
@@ -221,6 +168,8 @@
             </div>
         </div>
         
+        
+        
         <div class="nearest-stop">
             <div class="section-header">
                 <div class="section-title">Nearest bus stop</div>
@@ -234,9 +183,16 @@
                             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path d="M12,2C8.13,2,5,5.13,5,9c0,5.25,7,13,7,13s7-7.75,7-13C19,5.13,15.87,2,12,2z M12,11.5c-1.38,0-2.5-1.12-2.5-2.5s1.12-2.5,2.5-2.5s2.5,1.12,2.5,2.5S13.38,11.5,12,11.5z" fill="#777777"/>
                             </svg>
+                            
                         </div>
-                        <div class="stop-name">Dehradun Depot</div>
+                        <div class="stop-name">
+                        <form action="District" method="get">
+                        			<h1>Tanakpur</h1>	
+                        </form>
+                        </div>
                     </div>
+                    
+                    
                     <div class="walk-info">
                         <svg class="walk-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M13.5,5.5c1.1,0,2-0.9,2-2s-0.9-2-2-2s-2,0.9-2,2S12.4,5.5,13.5,5.5z M9.8,8.9L7,23h2.1l1.8-8l2.1,2v6h2v-7.5l-2.1-2l0.6-3C14.8,12,16.8,13,19,13v-2c-1.9,0-3.5-1-4.3-2.4l-1-1.6c-0.4-0.6-1-1-1.7-1c-0.3,0-0.5,0.1-0.8,0.1L6,8.3V13h2V9.6L9.8,8.9z" fill="#777777"/>
@@ -244,6 +200,8 @@
                         <div>1 min away</div>
                     </div>
                 </div>
+                
+                <% %>
                 
                 <div class="bus-list">
                     <div class="bus-item">

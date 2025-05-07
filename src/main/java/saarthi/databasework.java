@@ -6,10 +6,13 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
+import entity.District;
 import entity.resultset;
 
 import entity.rowmappersearch;
+import entity.rowmapperstop;
 import entity.searchform;
+import entity.stopage;
 import entity.userdata;
 
 @Repository
@@ -45,6 +48,35 @@ public class databasework {
 		List<searchform> se=jd.query(q,map,search.getFrom(), search.getTo());
 		return se;
 	}
+	
+	public List<stopage> findestope(String name){
+		String q="select * from "+name;
+		RowMapper<stopage> map=new rowmapperstop();
+		List<stopage>  sto=jd.query(q, map);
+		return sto;
+	}
+	
+	public List<searchform> getuturoute(searchform search) {
+		
+		String q="select * from route where From_Station_En=?";
+		RowMapper<searchform> map=new rowmappersearch();
+		List<searchform> se=jd.query(q,map,search.getFrom());
+		return se;
+	}
+	
+	
+	District dis=new District();
+	public void set_District(String name) {
+		dis.setDistrict(name);
+	}
+	
+	public String get_district() {
+		return dis.getDistrict();
+	}
+	
+	
+	
+	
 	
 	
 	

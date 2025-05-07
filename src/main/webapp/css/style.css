@@ -6,10 +6,6 @@
     font-family: 'Inter', sans-serif;
 }
 
-a{
-	
-	text-decoration:none;
-}
 
 body {
     background-color: #fff5e6;
@@ -66,12 +62,15 @@ header {
     color: #555;
     font-size: 15px;
     font-weight: 500;
-    padding: 8px 15px;
-    cursor: pointer;
+    padding: 5px 10px;
     margin-right: 10px;
-    transition: color 0.2s;
+    transition: color 0.2s ease;
 }
 
+a{
+	text-decoration: none;
+	color: #555;
+}
 .nav-item:hover {
     color: #f57c00;
 }
@@ -96,6 +95,12 @@ header {
     transform: translateY(-1px);
     box-shadow: 0 4px 6px rgba(245, 124, 0, 0.25);
 }
+
+/*.bus-photos {
+    display: flex;
+    justify-content: space-between;
+    flex: 1;
+}*/
 
 .location-btn {
     display: flex;

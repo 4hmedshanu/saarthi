@@ -3,8 +3,8 @@ package entity;
 public class searchform {
 	
 	private String route;
-	private String from;
-	private String to;
+	private String from ="Tanakpur";
+	private String to ="dharchula";
 	
 	
 	

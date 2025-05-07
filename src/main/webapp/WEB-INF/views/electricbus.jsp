@@ -24,12 +24,13 @@
             <a href="Utc" class="nav-link">UTC Bus</a>
             <a href="electric" class="nav-link active">Electric Bus</a>
             <a href="mytrickets" class="nav-link">My Tickets</a>
-            <a href="#" class="nav-link">findRoute</a>
+            <a href="find" class="nav-link">Find My Bus</a>
+            
         </div>
         <div class="location-container">
             <div class="location">
                 <i class="fas fa-map-marker-alt"></i>
-                <span>Dehradun</span>
+                <span>Tanakpur</span>
                 <i class="fas fa-chevron-right"></i>
             </div>
         </div>
@@ -70,26 +71,31 @@
                         <div class="point end"></div>
                     </div>
                     <div class="search-fields">
+                    
+                    <form action="Find" method="get" >
+                    
                         <div class="search-input">
-                            <input type="text" placeholder="Where from?">
+                            <input type="text" placeholder="Where from?" name="from">
                         </div>
                         <div class="exchange-icon">
                             <i class="fas fa-arrow-up"></i>
                             <i class="fas fa-arrow-down"></i>
                         </div>
                         <div class="search-input">
-                            <input type="text" placeholder="Where to?">
+                            <input type="text" placeholder="Where to?" name="to">
                         </div>
                     </div>
                 </div>
-                <button class="search-btn">Search for bus</button>
+                <button class="search-btn" type="submit">Search for bus</button>
+                
+                </from>
             </div>
 
             <!-- Right Side - Bus Features -->
             <div class="features-section">
-                <div class="bus-image-container">
-                    <img src="/api/placeholder/350/150" alt="Electric Bus" class="bus-image">
-                </div>
+               <div class="bus-image-container">
+                    <img src="<c:url value='/photo/bus_1.jpg'/>" alt="Electric Bus" class="bus-image">
+                </div>
                 <div class="features">
                     <div class="feature">
                         <i class="fas fa-couch"></i>
@@ -98,7 +104,7 @@
                     <div class="feature-divider"></div>
                     <div class="feature">
                         <i class="fas fa-map-marker-alt"></i>
-                        <p>Live<br>tracking</p>
+                        <a href="tracking"><p>Live<br>tracking</p></a>
                     </div>
                     <div class="feature-divider"></div>
                     <div class="feature">
