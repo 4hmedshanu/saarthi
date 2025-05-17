@@ -60,12 +60,12 @@ body {
 }
 
 .nav-item {
-    cursor: pointer;
     padding: 5px 8px;
     transition: all 0.3s ease;
     font-weight: 500;
     color: #555;
     position: relative;
+    text-decoration: none;
 }
 
 .nav-item:hover {

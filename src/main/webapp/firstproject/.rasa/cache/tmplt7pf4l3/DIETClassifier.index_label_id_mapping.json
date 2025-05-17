@@ -1,0 +1,17 @@
+{
+  "0": "affirm",
+  "1": "bot_capability",
+  "2": "bus_info",
+  "3": "deny",
+  "4": "depot_info",
+  "5": "district_info",
+  "6": "goodbye",
+  "7": "greet",
+  "8": "hilly_districts",
+  "9": "list_depots",
+  "10": "list_districts",
+  "11": "list_routes",
+  "12": "plain_districts",
+  "13": "route_info",
+  "14": "thanks"
+}

@@ -1,0 +1,176 @@
+version: "3.1"
+
+nlu:
+- intent: greet
+  examples: |
+    - hey
+    - hello
+    - hi
+    - hello there
+    - good morning
+    - good evening
+    - namaste
+    - namaskar
+
+- intent: goodbye
+  examples: |
+    - bye
+    - goodbye
+    - see you around
+    - see you later
+    - dhanyawad
+    - alvida
+
+- intent: affirm
+  examples: |
+    - yes
+    - y
+    - indeed
+    - of course
+    - that sounds good
+    - correct
+    - ha
+    - haan
+
+- intent: deny
+  examples: |
+    - no
+    - n
+    - never
+    - I don't think so
+    - don't like that
+    - no way
+    - not really
+    - nahi
+
+- intent: list_districts
+  examples: |
+    - what districts do you cover?
+    - show me all districts
+    - list of districts in Uttarakhand
+    - which districts have bus service?
+    - all districts
+    - districts information
+    - tell me about districts
+    - districts in UTC
+    - show districts
+
+- intent: district_info
+  examples: |
+    - tell me about [Dehradun](district)
+    - how many depots are in [Almora](district)?
+    - is [Nainital](district) a hilly region?
+    - information about [Haridwar](district) district
+    - what type of region is [Pithoragarh](district)?
+    - depots in [Uttarkashi](district)
+    - [Tehri Garhwal](district) information
+    - [Pauri Garhwal](district) details
+    - [Chamoli](district) district details
+    - number of depots in [Rudraprayag](district)
+    - tell me about [Bageshwar](district)
+    - [Champawat](district) information
+    - [Udham Singh Nagar](district) details
+
+- intent: list_depots
+  examples: |
+    - what depots do you have?
+    - show me all depots
+    - list of bus depots
+    - bus depots in Uttarakhand
+    - all depots information
+    - where are the depots located?
+    - depot locations
+    - UTC depots
+    - show depots
+
+- intent: depot_info
+  examples: |
+    - tell me about [ISBT Dehradun](depot) depot
+    - where is [Rishikesh Depot](depot) located?
+    - information about [Haridwar Central Depot](depot)
+    - which district is [Rudrapur Depot](depot) in?
+    - [Nainital Depot](depot) information
+    - [Almora Depot](depot) details
+    - [Pithoragarh Depot](depot) location
+    - tell me about [Tanakpur Depot](depot)
+    - [Lohaghat Depot](depot) information
+    - [Champawat Depot](depot) details
+    - [Bageshwar Depot](depot) location
+
+- intent: list_routes
+  examples: |
+    - what routes are available?
+    - show me all bus routes
+    - list of routes
+    - bus routes in Uttarakhand
+    - routes from [Tanakpur](location)
+    - routes to [Nainital](location)
+    - how can I travel from [Tanakpur](location) to [Nainital](location)?
+    - show routes from [Tanakpur](location) to [Dharchula](location)
+    - bus from [Tanakpur](location) to [Haridwar](location)
+    - buses between [Tanakpur](location) and [Chandigarh](location)
+
+- intent: route_info
+  examples: |
+    - tell me about route from [Tanakpur](from_location) to [Nainital](to_location)
+    - distance between [Tanakpur](from_location) and [Rudrapur](to_location)
+    - how far is [Tanakpur](from_location) from [Haridwar](to_location)?
+    - journey time from [Tanakpur](from_location) to [Shimla](to_location)
+    - bus timing from [Tanakpur](from_location) to [Lucknow](to_location)
+    - when does the bus leave from [Tanakpur](from_location) to [Dharchula](to_location)?
+    - arrival time of bus from [Tanakpur](from_location) to [Jaipur](to_location)
+    - route details from [Tanakpur](from_location) to [Chandigarh Sector 17](to_location)
+    - route code for [Tanakpur](from_location) to [Hisar](to_location)
+
+- intent: bus_info
+  examples: |
+    - tell me about bus [UK04PA1159](bus_number)
+    - information for bus number [UK08PA2391](bus_number)
+    - details of bus [UK06PA1401](bus_number)
+    - who is the driver of bus [UK07PA4195](bus_number)?
+    - conductor name of bus [UK07PA4451](bus_number)
+    - total seats in bus [UK04PA1124](bus_number)
+    - when was bus [UK03PA0135](bus_number) last serviced?
+    - registration date of bus [UK04PA1715](bus_number)
+    - bus type of [UK03PA0128](bus_number)
+    - tell me about [UK04PA2181](bus_number)
+
+- intent: hilly_districts
+  examples: |
+    - which districts are in hilly regions?
+    - list all hilly districts
+    - show me hilly areas
+    - hilly districts in Uttarakhand
+    - mountainous districts
+    - hill districts
+
+- intent: plain_districts
+  examples: |
+    - which districts are in plain regions?
+    - list all plain districts
+    - show me plain areas
+    - plain districts in Uttarakhand
+    - non-hilly districts
+    - flat region districts
+
+- intent: thanks
+  examples: |
+    - thanks
+    - thank you
+    - thank you so much
+    - thanks a lot
+    - awesome, thanks
+    - dhanyawad
+    - shukriya
+
+- intent: bot_capability
+  examples: |
+    - what can you do?
+    - help
+    - what are your features?
+    - how can you help me?
+    - what information can you provide?
+    - what are you capable of?
+    - how to use this bot
+    - show me options
+    - menu

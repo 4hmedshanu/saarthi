@@ -16,48 +16,51 @@
     <link rel="stylesheet" type="text/css" href="<c:url value='/css/utcbus.css'/>">
     
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
- <script type="text/javascript">
-  google.charts.load('current', {
-    'packages': ['map'],
-    'mapsApiKey': 'AIzaSyBopy2_ule3HjT4jvAarZjbfMA0tVS1O-c' // Replace with your actual API key
-  });
+  
+  
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA7cKVy8oB9I2TQ_unMt8302bZe1P9MiBA&libraries=places"></script>
+  
+  
+  
+      <!-- Load Google Maps API -->
+      <script>
+        let map;
+        let directionsService;
+        let directionsRenderer;
 
-  google.charts.setOnLoadCallback(drawMap);
+        function initMap() {
+            map = new google.maps.Map(document.getElementById("map"), {
+                center: { lat: 29.5892, lng: 79.6460 }, // Centered near Almora
+                zoom: 10
+            });
 
-  function drawMap () {
-    var data = new google.visualization.DataTable();
-    data.addColumn('string', 'Address');
-    data.addColumn('string', 'Location');
-    
-    data.addRows([
-    	  ['Almora, Uttarakhand, India', 'Almora'],
-    	  ['Bageshwar, Uttarakhand, India', 'Bageshwar'],
-    	  ['Champawat, Uttarakhand, India', 'Champawat'],
-    	]);
-
-    var options = {
-      mapType: 'styledMap',
-      zoomLevel: 7,
-      showTooltip: true,
-      showInfoWindow: true,
-      useMapTypeControl: true,
-      maps: {
-        styledMap: {
-          name: 'Styled Map',
-          styles: [
-            {featureType: 'poi.attraction', stylers: [{color: '#fce8b2'}]},
-            {featureType: 'road.highway', stylers: [{hue: '#0277bd'}, {saturation: -50}]},
-            {featureType: 'road.highway', elementType: 'labels.icon', stylers: [{hue: '#000'}, {saturation: 100}, {lightness: 50}]},
-            {featureType: 'landscape', stylers: [{hue: '#259b24'}, {saturation: 10}, {lightness: -22}]}
-          ]
+            directionsService = new google.maps.DirectionsService();
+            directionsRenderer = new google.maps.DirectionsRenderer();
+            directionsRenderer.setMap(map);
         }
-      }
-    };
 
-    var map = new google.visualization.Map(document.getElementById('map_div'));
-    map.draw(data, options);
-  }
-</script>
+        function calculateAndDisplayRoute() {
+            const request = {
+                origin: 'Almora, Uttarakhand, India',
+                destination: 'Bageshwar, Uttarakhand, India',
+                travelMode: google.maps.TravelMode.DRIVING
+            };
+
+            directionsService.route(request, function (result, status) {
+                if (status === "OK") {
+                    directionsRenderer.setDirections(result);
+                } else {
+                    alert("Directions request failed due to " + status);
+                }
+            });
+        }
+
+        // Initialize map when window loads
+        window.onload = initMap;
+    </script>
+
+
+
     
 </head>
 <body>
@@ -76,7 +79,7 @@
                     <svg class="location-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M12,2C8.13,2,5,5.13,5,9c0,5.25,7,13,7,13s7-7.75,7-13C19,5.13,15.87,2,12,2z M12,11.5c-1.38,0-2.5-1.12-2.5-2.5s1.12-2.5,2.5-2.5s2.5,1.12,2.5,2.5S13.38,11.5,12,11.5z" fill="#777777"/>
                     </svg>
-                    <div class="location-name">
+                    <div class="location-name" id="location">
 						Tanakpur
                     </div>
                     <svg class="arrow-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -100,17 +103,17 @@
                     </div>
                     <div class="input-fields">
                         <div class="input-group">
-                            <input type="text" placeholder="Where from?" name="from">
+                            <input type="text" placeholder="Where from?" id="origin" name="from">
                         </div>
                         <div class="input-group">
-                            <input type="text" placeholder="Where to?" name="to" >
+                            <input type="text" placeholder="Where to?" id="destination" name="to" >
                         </div>
                     </div>
                     <div class="swap-button">
                         <span class="swap-icon">↕</span>
                     </div>
                 </div>
-                <button class="search-button" type="submit">Search for bus</button>
+                <button class="search-button" type="submit" >Search for bus</button>
             </div>
         </div>
          </form>
@@ -186,9 +189,11 @@
                             
                         </div>
                         <div class="stop-name">
-                        <form action="District" method="get">
-                        			<h1>Tanakpur</h1>	
-                        </form>
+                        
+                        			<div class="location-name" id="location">
+						Tanakpur
+                    </div>	
+                        
                         </div>
                     </div>
                     
@@ -290,6 +295,37 @@
             </div>
         </div>
     </div>
+    
+    
+    <script>
+		    window.onload = function () {
+		      // Auto-detect location when page loads
+		      navigator.geolocation.getCurrentPosition(success, error);
+		
+		      function success(position) {
+		        const lat = position.coords.latitude;
+		        const lon = position.coords.longitude;
+		
+		        fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lon}&zoom=10`)
+		          .then(res => res.json())
+		          .then(data => {
+		            document.getElementById("location").textContent =
+		              data.address.city ||
+		              data.address.town ||
+		              data.address.village ||
+		              data.address.county ||
+		              data.address.state_district ||
+		              "Unknown";
+		          });
+		      }
+		
+		      function error(err) {
+		        document.getElementById("location").textContent = "Location unavailable";
+		      }
+		    }
+  </script>
+      
+    
  
 </body>
 </html>

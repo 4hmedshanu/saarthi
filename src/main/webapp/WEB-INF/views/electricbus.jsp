@@ -203,5 +203,36 @@
             </div>
         </div>
     </div>
+    
+    
+        <script>
+		    window.onload = function () {
+		      // Auto-detect location when page loads
+		      navigator.geolocation.getCurrentPosition(success, error);
+		
+		      function success(position) {
+		        const lat = position.coords.latitude;
+		        const lon = position.coords.longitude;
+		
+		        fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lon}&zoom=10`)
+		          .then(res => res.json())
+		          .then(data => {
+		            document.getElementById("location").textContent =
+		              data.address.city ||
+		              data.address.town ||
+		              data.address.village ||
+		              data.address.county ||
+		              data.address.state_district ||
+		              "Unknown";
+		          });
+		      }
+		
+		      function error(err) {
+		        document.getElementById("location").textContent = "Location unavailable";
+		      }
+		    }
+  </script>
+  
+  
 </body>
 </html>

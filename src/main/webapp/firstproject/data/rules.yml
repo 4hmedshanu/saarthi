@@ -1,0 +1,67 @@
+version: "3.1"
+
+rules:
+- rule: Say goodbye anytime the user says goodbye
+  steps:
+  - intent: goodbye
+  - action: utter_goodbye
+
+- rule: Say thanks anytime the user says thanks
+  steps:
+  - intent: thanks
+  - action: utter_thanks
+
+- rule: Respond to greeting
+  steps:
+  - intent: greet
+  - action: utter_greet
+
+- rule: Respond to capability inquiry
+  steps:
+  - intent: bot_capability
+  - action: utter_capabilities
+
+- rule: District info direct
+  steps:
+  - intent: district_info
+  - action: action_district_info
+
+- rule: Depot info direct
+  steps:
+  - intent: depot_info
+  - action: action_depot_info
+
+- rule: Route info direct
+  steps:
+  - intent: route_info
+  - action: action_route_info
+
+- rule: Bus info direct
+  steps:
+  - intent: bus_info
+  - action: action_bus_info
+
+- rule: List districts
+  steps:
+  - intent: list_districts
+  - action: action_list_districts
+
+- rule: List hilly districts
+  steps:
+  - intent: hilly_districts
+  - action: action_hilly_districts
+
+- rule: List plain districts
+  steps:
+  - intent: plain_districts
+  - action: action_plain_districts
+
+- rule: List depots
+  steps:
+  - intent: list_depots
+  - action: action_list_depots
+
+- rule: List routes
+  steps:
+  - intent: list_routes
+  - action: action_list_routes

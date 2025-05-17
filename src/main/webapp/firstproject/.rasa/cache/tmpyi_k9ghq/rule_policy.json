@@ -1,0 +1,40 @@
+{
+  "lookup": {
+    "rules": {
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"depot_info\"}}]": "action_depot_info",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"depot_info\"}}, {\"prev_action\": {\"action_name\": \"action_depot_info\"}, \"user\": {\"intent\": \"depot_info\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"list_routes\"}}]": "action_list_routes",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"list_routes\"}}, {\"prev_action\": {\"action_name\": \"action_list_routes\"}, \"user\": {\"intent\": \"list_routes\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"route_info\"}}]": "action_route_info",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"route_info\"}}, {\"prev_action\": {\"action_name\": \"action_route_info\"}, \"user\": {\"intent\": \"route_info\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"list_districts\"}}]": "action_list_districts",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"list_districts\"}}, {\"prev_action\": {\"action_name\": \"action_list_districts\"}, \"user\": {\"intent\": \"list_districts\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"hilly_districts\"}}]": "action_hilly_districts",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"hilly_districts\"}}, {\"prev_action\": {\"action_name\": \"action_hilly_districts\"}, \"user\": {\"intent\": \"hilly_districts\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"bus_info\"}}]": "action_bus_info",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"bus_info\"}}, {\"prev_action\": {\"action_name\": \"action_bus_info\"}, \"user\": {\"intent\": \"bus_info\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"district_info\"}}]": "action_district_info",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"district_info\"}}, {\"prev_action\": {\"action_name\": \"action_district_info\"}, \"user\": {\"intent\": \"district_info\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"list_depots\"}}]": "action_list_depots",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"list_depots\"}}, {\"prev_action\": {\"action_name\": \"action_list_depots\"}, \"user\": {\"intent\": \"list_depots\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"goodbye\"}}]": "utter_goodbye",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"goodbye\"}}, {\"prev_action\": {\"action_name\": \"utter_goodbye\"}, \"user\": {\"intent\": \"goodbye\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"greet\"}}]": "utter_greet",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"greet\"}}, {\"prev_action\": {\"action_name\": \"utter_greet\"}, \"user\": {\"intent\": \"greet\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"thanks\"}}]": "utter_thanks",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"thanks\"}}, {\"prev_action\": {\"action_name\": \"utter_thanks\"}, \"user\": {\"intent\": \"thanks\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"bot_capability\"}}]": "utter_capabilities",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"bot_capability\"}}, {\"prev_action\": {\"action_name\": \"utter_capabilities\"}, \"user\": {\"intent\": \"bot_capability\"}}]": "action_listen",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"plain_districts\"}}]": "action_plain_districts",
+      "[{\"prev_action\": {\"action_name\": \"action_listen\"}, \"user\": {\"intent\": \"plain_districts\"}}, {\"prev_action\": {\"action_name\": \"action_plain_districts\"}, \"user\": {\"intent\": \"plain_districts\"}}]": "action_listen"
+    },
+    "rule_only_slots": [],
+    "rule_only_loops": [],
+    "rules_for_loop_unhappy_path": {},
+    "rules_not_in_stories": [
+      "predicting default action with intent restart",
+      "predicting default action with intent session_start",
+      "predicting default action with intent back"
+    ]
+  }
+}

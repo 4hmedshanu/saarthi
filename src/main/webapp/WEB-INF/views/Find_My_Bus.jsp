@@ -18,7 +18,7 @@
     <!-- Navigation Bar -->
     <nav class="nav-bar">
         <div class="nav-container">
-            <div class="logo">SAARTHI</div>
+            <div class="logo" ><a href="home">SAARTHI</a></div>
             <div class="nav-menu">
                 <div class="nav-item find-bus active">Find My Bus</div>
                 <div class="nav-item"><a href="Utc">UTC Bus</a></div>
@@ -26,7 +26,7 @@
                 <div class="nav-item"><a href="mytrickets">My Tickets</a></div>
                 <div class="location">
                     <i class="fas fa-map-marker-alt"></i>
-                    <span>Dehradun</span>
+                    <span>Tanakpur</span>
                     <i class="fas fa-chevron-right"></i>
                 </div>
             </div>
@@ -154,7 +154,7 @@
         <div class="bottom-nav">
             <div class="bottom-nav-item">
                 <i class="fas fa-search"></i>
-                <span>PNR</span>
+                <a href="tracking"><p>PNR</p></a>
             </div>
             <div class="bottom-nav-item">
                 <i class="fas fa-ticket-alt"></i>
@@ -163,6 +163,36 @@
         </div>
     </div>
      <script type="text/javascript" src="<c:url value='/js/Finde_my_bus.js'/>"></script>
+     
+     
+     
+         <script>
+		    window.onload = function () {
+		      // Auto-detect location when page loads
+		      navigator.geolocation.getCurrentPosition(success, error);
+		
+		      function success(position) {
+		        const lat = position.coords.latitude;
+		        const lon = position.coords.longitude;
+		
+		        fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lon}&zoom=10`)
+		          .then(res => res.json())
+		          .then(data => {
+		            document.getElementById("location").textContent =
+		              data.address.city ||
+		              data.address.town ||
+		              data.address.village ||
+		              data.address.county ||
+		              data.address.state_district ||
+		              "Unknown";
+		          });
+		      }
+		
+		      function error(err) {
+		        document.getElementById("location").textContent = "Location unavailable";
+		      }
+		    }
+  </script>
   
 </body>
 </html>

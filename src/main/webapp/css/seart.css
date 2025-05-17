@@ -1,0 +1,307 @@
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.instruction {
+    background-color: #e6e9ff;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    color: #333;
+    text-align: center;
+    font-size: 16px;
+}
+
+.main-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* Bus layout styles */
+.bus-layout {
+    flex: 1;
+    background-color: white;
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 5px;
+    min-width: 300px;
+    position: relative;
+}
+
+.driver-boundary {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 5px;
+    background-color: #ddd;
+    border-right: 1px solid #ccc;
+}
+
+/* Driver section */
+.driver-section {
+    position: absolute;
+    left: 10px;
+    top: 20px;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.steering-wheel {
+    width: 40px;
+    height: 40px;
+}
+
+.driver-divider {
+    position: absolute;
+    left: 75px;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background-color: #ccc;
+}
+
+/* Seats container */
+.seats-container {
+    margin-left: 90px;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.seat-row {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.aisle-space {
+    height: 15px;
+    width: 100%;
+}
+
+.corner-seat {
+    justify-content: flex-end;
+}
+
+/* Seat styles */
+.seat {
+    width: 28px;
+    height: 28px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    position: relative;
+    background-color: white;
+    cursor: pointer;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    transform: rotate(180deg); /* Make seats face toward the driver */
+}
+
+.seat:before {
+    content: "";
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    right: 4px;
+    bottom: 12px;
+    border: 1px solid #ddd;
+    border-radius: 2px 2px 0 0;
+    background-color: rgba(0, 0, 0, 0.03);
+}
+
+.seat:after {
+    content: "";
+    position: absolute;
+    left: 7px;
+    right: 7px;
+    height: 4px;
+    bottom: 4px;
+    background-color: #ddd;
+    border-radius: 2px;
+}
+
+.seat.unavailable {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.seat.female {
+    background-color: #ffcdd2; /* Light red */
+}
+
+.seat.male {
+    background-color: #bbdefb; /* Light blue */
+}
+
+/* Legend styles */
+.seat-legend {
+    min-width: 200px;
+    padding: 10px;
+}
+
+.seat-legend h2 {
+    color: #555;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.legend-seat {
+    width: 24px;
+    height: 24px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-right: 10px;
+    position: relative;
+    transform: rotate(180deg); /* Make legend seats match main seats */
+}
+
+.legend-seat:before {
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    right: 3px;
+    bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 2px 2px 0 0;
+    background-color: rgba(0, 0, 0, 0.03);
+}
+
+.legend-seat:after {
+    content: "";
+    position: absolute;
+    left: 6px;
+    right: 6px;
+    height: 3px;
+    bottom: 3px;
+    background-color: #ddd;
+    border-radius: 2px;
+}
+
+.legend-seat.available {
+    background-color: white;
+}
+
+.legend-seat.unavailable {
+    background-color: #ccc;
+}
+
+.legend-seat.female {
+    background-color: #ffcdd2; /* Light red */
+}
+
+.legend-seat.male {
+    background-color: #bbdefb; /* Light blue */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .main-content {
+        flex-direction: column;
+    }
+    
+    .bus-layout {
+        min-width: 0;
+    }
+    
+    .seat {
+        width: 22px;
+        height: 22px;
+    }
+    
+    .seat:before {
+        bottom: 10px;
+    }
+    
+    .seat:after {
+        height: 3px;
+        bottom: 3px;
+    }
+    
+    .driver-section {
+        width: 40px;
+    }
+    
+    .driver-divider {
+        left: 60px;
+    }
+    
+    .driver-boundary {
+        width: 4px;
+    }
+    
+    .seats-container {
+        margin-left: 70px;
+    }
+}
+
+@media (max-width: 480px) {
+    .seat {
+        width: 18px;
+        height: 18px;
+    }
+    
+    .seat:before {
+        top: 3px;
+        left: 3px;
+        right: 3px;
+        bottom: 8px;
+    }
+    
+    .seat:after {
+        left: 5px;
+        right: 5px;
+        height: 2px;
+        bottom: 3px;
+    }
+    
+    .driver-section {
+        width: 30px;
+        top: 15px;
+        left: 5px;
+    }
+    
+    .steering-wheel {
+        width: 25px;
+        height: 25px;
+    }
+    
+    .driver-divider {
+        left: 45px;
+    }
+    
+    .driver-boundary {
+        width: 3px;
+    }
+    
+    .seats-container {
+        margin-left: 55px;
+        margin-top: 15px;
+        gap: 5px;
+    }
+    
+    .seat-row {
+        gap: 5px;
+    }
+}

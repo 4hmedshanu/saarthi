@@ -58,12 +58,16 @@
                     <i class="fas fa-caret-down"></i>
                 </div>
             </div>
+            
             <div class="filter-option" id="sortFilterBtn">
+          
                 <div class="dropdown">
+						
                     <span>Sort by</span>
                     <i class="fas fa-caret-down"></i>
                 </div>
-            </div>
+         
+           </div>
         </div>
     </div>
 
@@ -149,24 +153,26 @@
         </div>
     </div>
     
-    <% searchform search=(searchform) request.getAttribute("destination");
-        List<searchform> se =(List<searchform>) request.getAttribute("data");     
-                		
+    <% 
+       searchform  saarch=(searchform) request.getAttribute("distination");
+    
+     List<searchform> se =(List<searchform>)  request.getAttribute("data");
+             
                 		%>
 
     <!-- Route Display -->
     <div class="route-display">
         <div class="route-info">
             <div class="origin">
-            
-            <%=search.getFrom() %>
-            
+     
+     <%=saarch.getFrom()%>       
             </div>
             <div class="direction-arrow">
                 <i class="fas fa-long-arrow-alt-right"></i>
             </div>
             <div class="destination">
-            <%=search.getTo() %>
+            
+            <%=saarch.getTo() %>
             </div>
         </div>
     </div>
@@ -175,35 +181,41 @@
     <!-- Bus List -->
     <div class="bus-list">
         <!-- Bus Item 1 -->
-        <%for (searchform ele: se){
+     
+        <%
+        int i=1;
+        for (searchform ele: se){
+        	i++;
     	   %> 
-    	   <%String name=ele.getFrom()+ele.getTo();
-    	   	String rout=ele.getRoute();
+    	   <%
+    	    String name=ele.getFrom()+ele.getTo();
+    	   	String rout=ele.getRoute_name();
     	   	String from=ele.getFrom();
+    	   	String to=ele.getTo();
     	   %>
     	   
     	   
-    	<a href="route/<%=name%>/<%=rout%>/<%=from%>">
+    	<a href="route/<%=name%>/<%=rout%>/<%=from%>/<%=to%>">
     	
         <div class="bus-item late-running">
             <div class="bus-details">
-                <div class="bus-number">UK-05062</div>
+                <div class="bus-number">UK-05067<%=i %></div>
                 <div class="bus-time">
-                    <span class="departure">4:35 AM</span>
+                    <span class="departure"><%=ele.getStart_time() %></span>
                     <span class="duration">— 1h45m —</span>
-                    <span class="arrival">6:20 AM</span>
+                    <span class="arrival"><%=ele.getArrival_time() %></span>
                 </div>
-                <div class="bus-fare">₹55</div>
+                <div class="bus-fare"><%=ele.getDistance_km() %></div>
             </div>
             <div class="bus-info">
-                <div class="bus-name"><%=ele.getRoute()%></div>
+                <div class="bus-name"><%=ele.getRoute_name()%></div>
                 
             </div>
             <div class="status-message">Running late</div>
             
         </div>
         </a>
-        <%} %>
+        <%  } %>
 </div>
 
  

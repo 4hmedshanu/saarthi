@@ -7,9 +7,12 @@ import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
 
 import entity.District;
-import entity.resultset;
 
+import entity.live;
+import entity.resultset;
+import entity.rowmapperlive;
 import entity.rowmappersearch;
+
 import entity.rowmapperstop;
 import entity.searchform;
 import entity.stopage;
@@ -43,11 +46,24 @@ public class databasework {
 	}
 	
 	public List<searchform> getroute(searchform search) {
-		String q="select * from route where From_Station_En=? AND TO_Station_En=?";
+		String q="select * from BusRoutes where from_location=? and to_location=? " ;
 		RowMapper<searchform> map=new rowmappersearch();
 		List<searchform> se=jd.query(q,map,search.getFrom(), search.getTo());
+		
 		return se;
 	}
+	
+	public List<live> getbus_info(int id){
+		String q="select * from bus_info where bus_id=? ";
+		RowMapper<live> map=new rowmapperlive();
+		List<live> data=jd.query(q, map,id);
+		return data;
+	}
+	
+	
+	
+	
+	
 	
 	public List<stopage> findestope(String name){
 		String q="select * from "+name;
@@ -58,7 +74,7 @@ public class databasework {
 	
 	public List<searchform> getuturoute(searchform search) {
 		
-		String q="select * from route where From_Station_En=?";
+		String q="select * from BusRoutes where from_location=?";
 		RowMapper<searchform> map=new rowmappersearch();
 		List<searchform> se=jd.query(q,map,search.getFrom());
 		return se;
@@ -73,6 +89,19 @@ public class databasework {
 	public String get_district() {
 		return dis.getDistrict();
 	}
+	
+	live i=new live();
+	
+	public void set_id(int id) {
+		i.setId(id);
+	}
+	
+	public int get_id() {
+		return i.getId();
+	}
+	
+	
+
 	
 	
 	

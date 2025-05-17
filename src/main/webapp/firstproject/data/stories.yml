@@ -1,0 +1,90 @@
+version: "3.1"
+
+stories:
+- story: greet and list capabilities
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: bot_capability
+  - action: utter_capabilities
+  - intent: thanks
+  - action: utter_thanks
+
+- story: ask about districts
+  steps:
+  - intent: list_districts
+  - action: action_list_districts
+  - intent: district_info
+    entities:
+    - district: "Dehradun"
+  - slot_was_set:
+      - district: "Dehradun"
+  - action: action_district_info
+
+- story: ask about hilly districts
+  steps:
+  - intent: hilly_districts
+  - action: action_hilly_districts
+  - intent: district_info
+    entities:
+    - district: "Nainital"
+  - slot_was_set:
+      - district: "Nainital"
+  - action: action_district_info
+
+- story: ask about plain districts
+  steps:
+  - intent: plain_districts
+  - action: action_plain_districts
+  - intent: district_info
+    entities:
+    - district: "Haridwar"
+  - slot_was_set:
+      - district: "Haridwar"
+  - action: action_district_info
+
+- story: ask about depots
+  steps:
+  - intent: list_depots
+  - action: action_list_depots
+  - intent: depot_info
+    entities:
+    - depot: "Tanakpur Depot"
+  - slot_was_set:
+      - depot: "Tanakpur Depot"
+  - action: action_depot_info
+
+- story: ask about routes
+  steps:
+  - intent: list_routes
+  - action: action_list_routes
+  - intent: route_info
+    entities:
+    - from_location: "Tanakpur"
+    - to_location: "Nainital"
+  - slot_was_set:
+      - from_location: "Tanakpur"
+      - to_location: "Nainital"
+  - action: action_route_info
+
+- story: ask about bus by number
+  steps:
+  - intent: bus_info
+    entities:
+    - bus_number: "UK04PA1159"
+  - slot_was_set:
+      - bus_number: "UK04PA1159"
+  - action: action_bus_info
+  - intent: thanks
+  - action: utter_thanks
+
+- story: happy path with thanks and goodbye
+  steps:
+  - intent: greet
+  - action: utter_greet
+  - intent: list_routes
+  - action: action_list_routes
+  - intent: thanks
+  - action: utter_thanks
+  - intent: goodbye
+  - action: utter_goodbye

@@ -27,12 +27,12 @@
                         <li><a href="Utc">UTC Bus</a></li>
                         <li><a href="electric">Electric Bus</a></li>
                         <li><a href="mytrickets" class="active">My Tickets</a></li>
-                        <li><a href="#">findRoute</a></li>
+                        <li><a href="find">Find My Bus</a></li>
                     </ul>
                 </nav>
                 <div class="location">
                     <i class="fas fa-map-marker-alt location-icon"></i>
-                    <span>Dehradun</span>
+                    <span>Tanakpur</span>
                     <i class="fas fa-chevron-right location-arrow"></i>
                 </div>
             </div>
@@ -103,7 +103,8 @@
             </div>
             
             <div class="buy-ticket-section">
-                <button class="buy-btn"><i class="fas fa-ticket-alt"></i> Buy Ticket / Pass</button>
+                <button class="buy-btn"><i class="fas fa-ticket-alt"></i><a href="Buypay"> Buy Ticket / Pass</a></button>
+                
             </div>
         </section>
     </main>
@@ -185,6 +186,11 @@
         </div>
     </div>
     
-     <script type="text/javascript" src="<c:url value='/js/trickets.js'/>"></script>
+    
+    
+     <script type="text/javascript" src="<c:url value='/js/trickets.js'/>">
+     
+     
+     </script>
 </body>
 </html>

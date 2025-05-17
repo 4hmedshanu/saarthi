@@ -1,0 +1,80 @@
+{
+  "type": "MaxHistoryTrackerFeaturizer",
+  "state_featurizer": {
+    "action_texts": [],
+    "entity_tag_specs": [],
+    "feature_states": {
+      "intent": {
+        "affirm": 0,
+        "back": 1,
+        "bot_capability": 2,
+        "bus_info": 3,
+        "deny": 4,
+        "depot_info": 5,
+        "district_info": 6,
+        "goodbye": 7,
+        "greet": 8,
+        "hilly_districts": 9,
+        "list_depots": 10,
+        "list_districts": 11,
+        "list_routes": 12,
+        "nlu_fallback": 13,
+        "out_of_scope": 14,
+        "plain_districts": 15,
+        "restart": 16,
+        "route_info": 17,
+        "session_start": 18,
+        "thanks": 19
+      },
+      "action_name": {
+        "action_listen": 0,
+        "action_restart": 1,
+        "action_session_start": 2,
+        "action_default_fallback": 3,
+        "action_deactivate_loop": 4,
+        "action_revert_fallback_events": 5,
+        "action_default_ask_affirmation": 6,
+        "action_default_ask_rephrase": 7,
+        "action_two_stage_fallback": 8,
+        "action_unlikely_intent": 9,
+        "action_back": 10,
+        "...": 11,
+        "action_extract_slots": 12,
+        "action_list_districts": 13,
+        "action_district_info": 14,
+        "action_list_depots": 15,
+        "action_depot_info": 16,
+        "action_list_routes": 17,
+        "action_route_info": 18,
+        "action_bus_info": 19,
+        "action_hilly_districts": 20,
+        "action_plain_districts": 21,
+        "utter_ask_rephrase": 22,
+        "utter_capabilities": 23,
+        "utter_default": 24,
+        "utter_goodbye": 25,
+        "utter_greet": 26,
+        "utter_please_wait": 27,
+        "utter_thanks": 28
+      },
+      "entities": {
+        "bus_number": 0,
+        "depot": 1,
+        "district": 2,
+        "from_location": 3,
+        "location": 4,
+        "to_location": 5
+      },
+      "slots": {
+        "district_0": 0,
+        "depot_0": 1,
+        "from_location_0": 2,
+        "to_location_0": 3,
+        "bus_number_0": 4
+      },
+      "active_loop": {}
+    }
+  },
+  "remove_duplicates": true,
+  "max_history": 5
+}

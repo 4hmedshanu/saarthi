@@ -12,6 +12,32 @@ a{
 	text-decoration:none;
 }
 
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown select {
+    appearance: none;
+    padding-right: 30px; /* space for icon */
+    font-size: 16px;
+}
+
+.dropdown i {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: #333;
+}
+
+
+
+
+
+
 body {
     background-color: #ffe0b2;
     color: #333;

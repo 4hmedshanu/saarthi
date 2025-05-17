@@ -6,8 +6,12 @@ function toggleChatbot() {
 
 const qaPairs = [
 	{
+		  	    q: "ticket from tanakpur to delhi",
+		  	    a: "the price of ticket to DELHI is ₹615."
+	},
+	{
 	    q: "How can I book a bus ticket online?",
-	    a: "You can book tickets easily through [Your Website/App]. Select your origin, destination, date, number of passengers, and preferred seats, then complete the payment."
+	    a: "You can book tickets easily through Saarthi. Select your origin, destination, date, number of passengers, and preferred seats, then complete the payment."
 	  },
 	  {
 	    q: "Is it possible to book tickets via phone?",
@@ -632,7 +636,7 @@ const qaPairs = [
 	    a: "The distance from Tanakpur to PURENT on the Haridwar route is 236 km. Fare is ₹385."
 	  },
 	  {
-	    q: " Hi there!",
+	    q: "hi",
 	    a: "Hello! How can I assist you today?"
 	  },
 	  {
@@ -861,7 +865,7 @@ const qaPairs = [
 	    a: "You can travel to JOYA on the way to Hisar. It's 208 km from Tanakpur and costs ₹345."
 	  },
 	  {
-	    q: "How can I travel from Tanakpur to Jaipur?",
+	    q: "how can i travel from tanakpur to jaipur?",
 	    a: "Yes, there is a stop at BHILASPUR on the way to Jaipur. It is 90 km from Tanakpur and the fare is ₹110."
 	  },
 	  {
@@ -945,17 +949,395 @@ const qaPairs = [
 	    a: "You can travel to BIDORA on the way to Gurugaon. It's 47 km from Tanakpur and costs ₹85."
 	  },
 	  {
-	    q: "How can I travel from Tanakpur to Gurugaon?",
+	    q: "how can i travel from tanakpur to gurugaon?",
 	    a: "The bus from Tanakpur to Gurugaon stops at CHAKRAPUR which is 18 km away and costs ₹30."
 	  },
 	  {
-	    q: "Bus details to reach KASHIPUR from Tanakpur on way to Haridwar?",
+	    q: "bus details to reach kASHIPUR from tanakpur on way to haridwar?",
 	    a: "Yes, there is a stop at KASHIPUR on the way to Haridwar. It is 156 km from Tanakpur and the fare is ₹270."
 	  },
 	  {
 	    q: "Bus details to reach CHARCHAM from Tanakpur on way to Dharchula?",
 	    a: "The distance from Tanakpur to CHARCHAM on the Dharchula route is 239 km. Fare is ₹535."
-	  }
+	  },
+	  {
+	    q: "distance to bastiya?",
+	    a: "Bastiya is 8 km from Tanakpur."
+	  },
+	  {
+	    q: "is there a stop at bastiya?",
+	    a: "yes, there is a stop at Bastiya."
+	  },
+	  {
+	    q: "fare to shukhi dhang?",
+	    a: "the fare to Shukhi Dhang is ₹55."
+	  },
+	  {
+	    q: "distance to shukhi dhang?",
+	    a: "Shukhi Dhang is 23 km from Tanakpur."
+	  },
+	  {
+	    q: "is there a stop at shukhi dhang?",
+	    a: "yes, there is a stop at Shukhi Dhang."
+	  },
+	  {
+	    q: "fare to sinnyari?",
+	    a: "the fare to Sinnyari is ₹70."
+	  },
+	  {
+	    q: "distance to sinnyari?",
+	    a: "Sinnyari is 30 km from Tanakpur."
+	  },
+	  {
+	    q: "is there a stop at sinnyari?",
+	    a: "yes, there is a stop at Sinnyari."
+	  },
+	  {
+	    q: "fare to chalti?",
+	    a: "the fare to Chalti is ₹80."
+	  },
+	  {
+	    q: "distance to chalti?",
+	    a: "Chalti is 36 km from Tanakpur."
+	  },
+	  {
+	    q: "is there a stop at chalti?",
+	    a: "yes, there is a stop at Chalti."
+	  },
+	  {
+	    q: "fare to bilkhet?",
+	    a: "the fare to Bilkhet is ₹95."
+	  },
+	  {
+	    q: "distance to bilkhet?",
+	    a: "Bilkhet is 41 km from Tanakpur."
+	  },
+	  {
+	    q: "is there a stop at bilkhet?",
+	    a: "yes, there is a stop at Bilkhet."
+	  },
+	  {
+	    q: "fare to amouri?",
+	    a: "the fare to Amouri is ₹105."
+	  },
+	  {
+	    q: "distance to amouri?",
+	    a: "Amouri is 46 km from Tanakpur."
+	  },
+	  {
+	    q: "is there a stop at amouri?",
+	    a: "yes, there is a stop at Amouri."
+	  },
+	  {
+	    q: "fare to shawala?",
+	    a: "the fare to Shawala is ₹125."
+	  },
+	  {
+	    q: "distance to shawala?",
+	    a: "Shawala is 55 km from Tanakpur."
+	  },
+	  {
+	    q: "is there a stop at shawala?",
+	    a: "yes, there is a stop at Shawala."
+	  },
+	  {
+	    q: "fare to dhon?",
+	    a: "the fare to Dhon is ₹140."
+	  },
+	  {
+	    q: "distance to dhon?",
+	    a: "Dhon is 63 km from Tanakpur."
+	  },
+	  {
+	    q: "is there a stop at dhon?",
+	    a: "yes, there is a stop at Dhon."
+	  },
+	  {
+	    q: "fare to banlake?",
+	    a: "the fare to Banlake is ₹150."
+	  },
+	  {
+	    q: "distance to banlake?",
+	    a: "Banlake is 67 km from Tanakpur."
+	  },
+	  {
+	    q: "is there a stop at banlake?",
+	    a: "yes, there is a stop at Banlake."
+	  },
+	  {
+	    q: "fare to fulargaun?",
+	    a: "the fare to Fulargaun is ₹160."
+	  },
+	  {
+	    q: "distance to fulargaun?",
+	    a: "Fulargaun is 71 km from Tanakpur."
+	  },
+	  {
+	    q: "is there a stop at fulargaun?",
+	    a: "yes, there is a stop at Fulargaun."
+	  },
+	  {
+	    q: "fare to champawat?",
+	    a: "the fare to Champawat is ₹170."
+	  },
+	  {
+	    q: "distance to champawat?",
+	    a: "Champawat is 75 km from Tanakpur."
+	  },
+	  {
+	    q: "is there a stop at champawat?",
+	    a: "yes, there is a stop at Champawat."
+	  },
+	  {
+	    q: "fare to lohaghat?",
+	    a: "the fare to Lohaghat is ₹200."
+	  },
+	  {
+	    q: "distance to lohaghat?",
+	    a: "Lohaghat is 89 km from Tanakpur."
+	  },
+	  {
+	    q: "is there a stop at lohaghat?",
+	    a: "yes, there is a stop at Lohaghat."
+	  },
+	  {
+	    q: "fare to pithoragarh?",
+	    a: "the fare to Pithoragarh is ₹340."
+	  },
+	  {
+	    q: "distance to pithoragarh",
+	    a: "Pithoragarh is 151 km from Tanakpur."
+	  },
+	  {
+	    q: "is there a stop at pithoragarh?",
+	    a: "yes, there is a stop at Pithoragarh."
+	  },
+	  {
+	      q: "hi",
+	      a: "hello! how can i help you today?"
+	    },
+	    {
+	      q: "hello",
+	      a: "hi there! looking for a bus or route info?"
+	    },
+	    {
+	      q: "good morning",
+	      a: "good morning! how can i assist you?"
+	    },
+	    {
+	      q: "good evening",
+	      a: "good evening! need help with a booking?"
+	    },
+	    {
+	      q: "how to book a seat?",
+	      a: "you can book through our app or website by selecting your route and paying online."
+	    },
+	    {
+	      q: "can i cancel my ticket?",
+	      a: "yes, you can cancel your ticket through our platform before departure time."
+	    },
+	    {
+	      q: "how to check seat availability?",
+	      a: "check seat availability on our website/app under your selected route."
+	    },
+	    {
+	      q: "is this bus ac?",
+	      a: "some buses are ac. please check the route details while booking."
+	    },
+	    {
+	      q: "what is the luggage limit?",
+	      a: "you can carry up to 20kg. for more, extra charges may apply."
+	    },
+	    {
+	      q: "are pets allowed?",
+	      a: "no, pets are not allowed in the bus."
+	    },
+	    {
+	      q: "can i pay by upi?",
+	      a: "yes, we accept UPI, cards, and net banking."
+	    },
+	    {
+	      q: "do i get a receipt?",
+	      a: "yes, a receipt is sent to your phone and email after payment."
+	    },
+	    {
+	      q: "how to get support?",
+	      a: "contact our helpline or use the chat support on our app."
+	    },
+	    {
+	      q: "do you run buses on holidays?",
+	      a: "yes, our services operate daily, including holidays."
+	    },
+	    {
+	      q: "what if bus is late?",
+	      a: "you’ll be notified via sms/app if there’s a delay."
+	    },
+	    {
+	      q: "can i board from mid-point?",
+	      a: "yes, select your boarding stop during booking."
+	    },
+	    {
+	      q: "are student discounts available?",
+	      a: "not yet, but we’re working on introducing student passes soon."
+	    },
+	    {
+	      q: "can i travel without id?",
+	      a: "you must carry a valid id to board the bus."
+	    },
+	    {
+	      q: "can i pay cash?",
+	      a: "yes, cash is accepted for offline bookings."
+	    },
+	    {
+	      q: "how many seats in the bus?",
+	      a: "our buses have 40 to 52 seats depending on the model."
+	    },
+	    {
+	      q: "is there a break during the trip?",
+	      a: "yes, long-distance buses take scheduled rest stops."
+	    },
+	  {
+	      q: "what is the price of ticket from tanakpur to kamal path?",
+	      a: "the price of ticket to KAMAL PATH is ₹15."
+	    },
+	    {
+	      q: "what is the price of ticket from tanakpur to banbasa?",
+	      a: "the price of ticket to BANBASA is ₹20."
+	    },
+	    {
+	      q: "what is the price of ticket from tanakpur to chakrapur?",
+	      a: "the price of ticket to CHAKRAPUR is ₹30."
+	    },
+	    {
+	      q: "what is the price of ticket from tanakpur to khatima?",
+	      a: "the price of ticket to KHATIMA is ₹40."
+	    },
+		
+	    {
+	      q: "what is the price of ticket from tanakpur to jhankat?",
+	      a: "the price of ticket to JHANKAT is ₹60."
+	    },
+	    {
+	      q: "what is the price of ticket from tanakpur to nanak sagar?",
+	      a: "the price of ticket to NANAK SAGAR is ₹65."
+	    },
+	    {
+	      q: "what is the price of ticket from tanakpur to nanak matta?",
+	      a: "the price of ticket to NANAK MATTA is ₹80."
+	    },
+	    {
+	      q: "what is the price of ticket from tanakpur to bidora?",
+	      a: "the price of ticket to BIDORA is ₹85."
+	    },
+	    {
+	      q: "what is the price of ticket from tanakpur to sisai khera?",
+	      a: "the price of ticket to SISAI KHERA is ₹85."
+	    },
+	    {
+	      q: "what is the price of ticket from tanakpur to sitarganj?",
+	      a: "the price of ticket to SITARGANJ is ₹95."
+	    },
+	    {
+	        q: "what is the price of ticket from tanakpur to kamal path?",
+	        a: "the price of ticket to KAMAL PATH is ₹15."
+	      },
+	      {
+	        q: "what is the price of ticket from tanakpur to banbasa?",
+	        a: "the price of ticket to BANBASA is ₹20."
+	      },
+	      {
+	        q: "what is the price of ticket from tanakpur to chakrapur?",
+	        a: "the price of ticket to CHAKRAPUR is ₹30."
+	      },
+	      {
+	        q: "what is the price of ticket from tanakpur to khatima?",
+	        a: "the price of ticket to KHATIMA is ₹40."
+	      },
+	      {
+	        q: "what is the price of ticket from tanakpur to jhankat?",
+	        a: "the price of ticket to JHANKAT is ₹60."
+	      },
+	      {
+	        q: "how far is chakrapur from tanakpur by bus?",
+	        a: "the distance from Tanakpur to CHAKRAPUR is approximately 20 kilometers."
+	      },
+	      {
+	        q: "what is the bus route from tanakpur to khatima?",
+	        a: "the bus goes from Tanakpur to KHATIMA with stops in between."
+	      },
+	  	{
+	  	    q: "ticket from tanakpur to kamal path",
+	  	    a: "the price of ticket to KAMAL PATH is ₹15."
+	  	  },
+	  	  {
+	  	    q: "distance from tanakpur to kamal path",
+	  	    a: "the distance from Tanakpur to KAMAL PATH is approximately 8 kilometers."
+	  	  },
+	  	  {
+	  	    q: "price from tanakpur to kamal path",
+	  	    a: "the price of ticket to KAMAL PATH is ₹15."
+	  	  },
+	  	  {
+	  	    q: "ticket from tanakpur to banbasa",
+	  	    a: "the price of ticket to BANBASA is ₹20."
+	  	  },
+	  	  {
+	  	    q: "distance from tanakpur to banbasa",
+	  	    a: "the distance from Tanakpur to BANBASA is approximately 11 kilometers."
+	  	  },
+	  	  {
+	  	    q: "price from tanakpur to banbasa",
+	  	    a: "the price of ticket to BANBASA is ₹20."
+	  	  },
+	  	  {
+	  	    q: "ticket from tanakpur to chakrapur",
+	  	    a: "the price of ticket to CHAKRAPUR is ₹30."
+	  	  },
+	  	  {
+	  	    q: "distance from tanakpur to chakrapur",
+	  	    a: "the distance from Tanakpur to CHAKRAPUR is approximately 18 kilometers."
+	  	  },
+	  	  {
+	  	    q: "price from tanakpur to chakrapur",
+	  	    a: "the price of ticket to CHAKRAPUR is ₹30."
+	  	  },
+	  	  {
+	  	    q: "ticket from tanakpur to khatima",
+	  	    a: "the price of ticket to KHATIMA is ₹40."
+	  	  }		,
+	  	  {
+	  	    q: "distance from tanakpur to kamal path",
+	  	    a: "the distance from Tanakpur to KAMAL PATH is approximately 8 kilometers."
+	  	  },
+	  	  {
+	  	    q: "price from tanakpur to kamal path",
+	  	    a: "the price of ticket to KAMAL PATH is ₹15."
+	  	  },
+	  	  {
+	  	    q: "what is the price of ticket from tanakpur to banbasa?",
+	  	    a: "the price of ticket to BANBASA is ₹20."
+	  	  },
+	  	  {
+	  	    q: "how far is banbasa from tanakpur by bus?",
+	  	    a: "the distance from Tanakpur to BANBASA is approximately 11 kilometers."
+	  	  },
+	  	  {
+	  	    q: "what is the bus route from tanakpur to banbasa?",
+	  	    a: "the bus goes from Tanakpur to BANBASA with stops in between."
+	  	  },
+	  	  {
+	  	    q: "ticket from tanakpur to banbasa",
+	  	    a: "the price of ticket to BANBASA is ₹20."
+	  	  },
+	  	  {
+	  	    q: "distance from tanakpur to banbasa",
+	  	    a: "the distance from Tanakpur to BANBASA is approximately 11 kilometers."
+	  	  },
+	  	  {
+	  	    q: "price from tanakpur to banbasa",
+	  	    a: "the price of ticket to BANBASA is ₹20."
+	  	  },
+	  	  
   ];
 
 
@@ -971,8 +1353,10 @@ function getBotResponse(message) {
       return pair.a;
     }
   }
-  return "Sorry, I don't have an answer for that.";
+  return "that's a great question — i'm still learning and will try to cover it soon.";
 }
+
+
 
 function sendMessage() {
   const input = document.getElementById("userInput");
@@ -996,7 +1380,9 @@ function sendMessage() {
     chatBody.appendChild(botDiv);
     chatBody.scrollTop = chatBody.scrollHeight;
   }, 600);
+  
 }
+
 
 
 

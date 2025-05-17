@@ -31,11 +31,14 @@
                 <i class="fas fa-ellipsis-vertical"></i>
             </div>
         </div>
+        
         <div class="action-bar">
             <div class="date-dropdown" id="dateTrigger">
                 Tomorrow
                 <i class="fas fa-caret-down"></i>
             </div>
+            
+            
             <div class="action-buttons">
                 <button class="action-button">
                     <i class="fas fa-bell"></i>
@@ -382,6 +385,8 @@
             </div>
         </div>
     </div>
+    
+    
 
     <!-- Modal Overlay -->
     <div class="modal-overlay" id="modalOverlay"></div>

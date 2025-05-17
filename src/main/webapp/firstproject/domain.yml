@@ -1,0 +1,111 @@
+version: "3.1"
+
+intents:
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - list_districts
+  - district_info
+  - list_depots
+  - depot_info
+  - list_routes
+  - route_info
+  - bus_info
+  - hilly_districts
+  - plain_districts
+  - thanks
+  - bot_capability
+
+entities:
+  - district
+  - depot
+  - location
+  - from_location
+  - to_location
+  - bus_number
+
+slots:
+  district:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: district
+
+  depot:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: depot
+
+  from_location:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: from_location
+
+  to_location:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: to_location
+
+  bus_number:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: bus_number
+
+responses:
+  utter_greet:
+    - text: "Hello! Welcome to Uttarakhand Transport Corporation's virtual assistant. How may I help you today?"
+    - text: "Namaste! I'm UTC's virtual assistant. How can I assist you with your transport needs?"
+    - text: "Hi there! I can help you with information about buses, routes, and depots in Uttarakhand. What would you like to know?"
+
+  utter_goodbye:
+    - text: "Goodbye! Have a safe journey!"
+    - text: "Dhanyawad for using UTC's virtual assistant. Have a great day!"
+    - text: "Thank you for using our service. Come back soon!"
+
+  utter_default:
+    - text: "I'm sorry, I didn't understand that. Could you rephrase or try a different query?"
+    - text: "I'm not sure I follow. Can you please rephrase your question?"
+    - text: "I didn't quite get that. Could you try asking in a different way?"
+
+  utter_ask_rephrase:
+    - text: "I'm sorry, could you rephrase that?"
+    - text: "Could you please be more specific?"
+    - text: "I didn't understand that. Can you please rephrase?"
+
+  utter_please_wait:
+    - text: "Please wait while I fetch that information for you..."
+    - text: "Let me look that up for you..."
+    - text: "One moment please, retrieving the information..."
+
+  utter_thanks:
+    - text: "You're welcome! Happy to help."
+    - text: "No problem! Is there anything else you'd like to know?"
+    - text: "My pleasure! Feel free to ask if you need more information."
+
+  utter_capabilities:
+    - text: "I can help you with information about Uttarakhand Transport Corporation services. You can ask me about:\n- Districts and their depots\n- Bus depot locations\n- Bus routes and timings\n- Bus details by bus number\n- Hilly and plain districts\nJust ask me what you'd like to know!"
+
+actions:
+  - action_list_districts
+  - action_district_info
+  - action_list_depots
+  - action_depot_info
+  - action_list_routes
+  - action_route_info
+  - action_bus_info
+  - action_hilly_districts
+  - action_plain_districts
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
